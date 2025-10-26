@@ -4,6 +4,12 @@ Very simple library that provides binding to native unix pipes for inter process
 
 ### How to use it
 
+#### Install
+
+`npm i nodejs-raw-unix-pipe`
+
+#### Run
+
 ```typescript
 import { spawn } from "node:child_process";
 import { close, read, write } from "node:fs";
