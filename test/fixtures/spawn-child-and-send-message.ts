@@ -1,14 +1,12 @@
-### What it is
-
-Very simple library that provides binding to native unix pipes for inter process communication.
-
-### How to use it
-
-```typescript
+/**
+ * 1. Creates unix pipe.
+ * 2. Spawns child process and send read file descriptor to it as argument.
+ * 3. Sends message to the write file descriptor.
+ */
 import { spawn } from "node:child_process";
 import { close, read, write } from "node:fs";
 import { pipeline } from "node:stream/promises";
-import { pipeCreate } from "nodejs-raw-unix-pipe";
+import { pipeCreate } from "../../index.ts";
 
 const kChildMarker = "--is-child=true";
 
@@ -45,4 +43,3 @@ function isChild() {
 function getReadFd() {
   return Number(process.argv[3]);
 }
-```
