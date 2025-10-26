@@ -4,7 +4,7 @@
  * 3. Sends message to the write file descriptor.
  */
 import { spawn } from "node:child_process";
-import { close, read, write } from "node:fs";
+import { closeSync, read, write } from "node:fs";
 import { pipeline } from "node:stream/promises";
 import { pipeCreate } from "../../src/index.ts";
 
@@ -31,8 +31,8 @@ if (isChild()) {
     console.log(`[PARENT] msg written: ${str}`);
   });
   process.on("exit", () => {
-    close(readFd);
-    close(writeFd);
+    closeSync(readFd);
+    closeSync(writeFd);
   });
 }
 

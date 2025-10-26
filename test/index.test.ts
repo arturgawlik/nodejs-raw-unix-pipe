@@ -1,12 +1,17 @@
-import { test } from "node:test";
+import { after, test } from "node:test";
 import assert from "node:assert";
 import { spawn } from "node:child_process";
 import { join } from "node:path";
-import { pipeCreate } from "../src/index.ts";
 import { pipeline } from "node:stream/promises";
+import { closeSync } from "node:fs";
+import { pipeCreate } from "../src/index.ts";
 
 test("should create pipe", () => {
   const [readFd, writeFd] = pipeCreate();
+  after(() => {
+    closeSync(readFd);
+    closeSync(writeFd);
+  });
   assert(typeof readFd, "number");
   assert(typeof writeFd, "number");
 });
