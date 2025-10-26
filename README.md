@@ -6,7 +6,9 @@ Very simple library that provides binding to native unix pipes for inter process
 
 #### Install
 
-`npm i nodejs-raw-unix-pipe`
+```bash
+npm i nodejs-raw-unix-pipe
+```
 
 #### Run
 
