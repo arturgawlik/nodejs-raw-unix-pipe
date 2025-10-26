@@ -1,1 +1,11 @@
-node_modules
+/*.node.gz
+/*.tgz
+/build/
+/lib/binding/
+/node_modules/
+/npm-*
+/temp/
+/prebuilds/
+/.cache/
+compile_commands.json
+/dist/
