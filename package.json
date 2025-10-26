@@ -22,15 +22,21 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "install": "cmake-js compile",
-    "build": "cmake-js build"
+    "cmake:install": "cmake-js compile",
+    "cmake:build": "cmake-js build",
+    "tsdown:build": "tsdown",
+    "tsdown:dev": "tsdown --watch",
+    "test": "node --test"
   },
   "dependencies": {
     "bindings": "^1.5.0",
     "node-addon-api": "^8.5.0"
   },
   "devDependencies": {
-    "cmake-js": "^7.3.1"
+    "@types/node": "^24.9.1",
+    "cmake-js": "^7.3.1",
+    "tsdown": "^0.15.10",
+    "typescript": "^5.9.3"
   },
   "binary": {
     "napi_versions": [
