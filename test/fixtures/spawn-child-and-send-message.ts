@@ -6,7 +6,7 @@
 import { spawn } from "node:child_process";
 import { close, read, write } from "node:fs";
 import { pipeline } from "node:stream/promises";
-import { pipeCreate } from "../../index.ts";
+import { pipeCreate } from "../../src/index.ts";
 
 const kChildMarker = "--is-child=true";
 

@@ -1,6 +1,6 @@
 {
   "name": "nodejs-raw-unix-pipe",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "Node.js bindings to native unix pipe.",
   "keywords": [
     "nodjs",
@@ -20,21 +20,28 @@
   "license": "ISC",
   "author": "Artur Gawlik",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "main.h",
+    "main.cc",
+    "CMakeLists.txt",
+    "README.md"
+  ],
   "scripts": {
-    "cmake:install": "cmake-js compile",
-    "cmake:build": "cmake-js build",
+    "install": "cmake-js compile",
+    "build": "cmake-js build",
     "tsdown:build": "tsdown",
     "tsdown:dev": "tsdown --watch",
     "test": "node --test"
   },
   "dependencies": {
     "bindings": "^1.5.0",
+    "cmake-js": "^7.3.1",
     "node-addon-api": "^8.5.0"
   },
   "devDependencies": {
     "@types/node": "^24.9.1",
-    "cmake-js": "^7.3.1",
     "tsdown": "^0.15.10",
     "typescript": "^5.9.3"
   },

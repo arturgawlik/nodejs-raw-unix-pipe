@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert";
 import { spawn } from "node:child_process";
 import { join } from "node:path";
-import { pipeCreate } from "../index.ts";
+import { pipeCreate } from "../src/index.ts";
 import { pipeline } from "node:stream/promises";
 
 test("should create pipe", () => {

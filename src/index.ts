@@ -1,7 +1,8 @@
 import { createRequire } from "node:module";
+import { join } from "node:path";
 
 const { pipe_create } = createRequire(import.meta.url)(
-  "./build/Release/nodejs-raw-unix-pipe.node"
+  join(import.meta.dirname, "../build/Release/nodejs-raw-unix-pipe.node")
 );
 
 export type PipeCreateResult = [number, number];
