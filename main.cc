@@ -7,8 +7,8 @@ Napi::Value pipe_create(const CallbackInfo &info) {
   const auto env = info.Env();
   int p[2];
   if (pipe(p) < 0) {
-    // TODO: throw JS error instead
-    exit(1);
+    const auto err = Error::New(env, "pipe syscall returned error code.");
+    err.ThrowAsJavaScriptException();
   }
   const auto res = Array::New(env, 2);
   res.Set((uint32_t)0, Number::New(env, p[0]));
